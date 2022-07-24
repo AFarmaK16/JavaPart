@@ -16,6 +16,9 @@ package serveur;
 	        Endpoint.publish(url2, new UserAuth());
 			System.out.println("\nServer For User Management Up and Running at : " + url1);
 			System.out.println("\nServer For User Auhtentication Up and Running at : " + url2);
+			UserManagement u= new UserManagement();
+//		System.out.println(u.getUser("admin", "passer"));
+//			System.out.println(u.getUser("fat.ndiaye", "passer").getRole());
 	    }
 
 }

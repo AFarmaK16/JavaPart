@@ -68,6 +68,5 @@ public class GetUsersResponse {
     public void setReturn(List<User> users) {
         this._return = users;
     }
- 
 
 }

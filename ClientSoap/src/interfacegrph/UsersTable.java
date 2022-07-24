@@ -61,7 +61,7 @@ public class UsersTable {
                 GetUsersResponse response = userRepo.getUsers(new GetUsers());
                 users = response.getReturn();
             }
-            String titles[] = new String[] { "Id", "Mail","User Role"};
+            String titles[] = new String[] { "Id", "Login","Role"};
             DefaultTableModel tableModel = new DefaultTableModel(0, 0)
             {
                 @Override

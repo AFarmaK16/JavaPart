@@ -21,7 +21,7 @@ public class UserManagement {
 			List<User> et = new ArrayList<>();
 			try {
 				Connection myCon = Connexion.getCon();
-				PreparedStatement myStmt = myCon.prepareStatement("SELECT * FROM user from  ORDER BY id");
+				PreparedStatement myStmt = myCon.prepareStatement("SELECT * FROM user  ORDER BY id");
 				ResultSet resultat = myStmt.executeQuery();
 				while (resultat.next()) {
 					et.add(new User(resultat.getInt("id"), resultat.getString("email"), resultat.getString("password"),resultat.getString("role")));
@@ -41,7 +41,7 @@ public class UserManagement {
 	        try {
 
 	        	Connection myCon = Connexion.getCon();
-	            PreparedStatement myStmt = myCon.prepareStatement("SELECT * FROM Users WHERE id = ?");
+	            PreparedStatement myStmt = myCon.prepareStatement("SELECT * FROM user WHERE id = ?");
 	            myStmt.setInt(1, id);
 	            ResultSet resultat = myStmt.executeQuery();
 	            if (resultat.next()) {
@@ -84,7 +84,7 @@ public class UserManagement {
 	@WebMethod
 	public   String Update(String email, String password, String role,int id) {
 		try {
-			String req = "UPDATE user set email=?,password=?,role=?where id=?";
+			String req = "UPDATE user set email=?,password=?,role=? where id=?";
 			Connection myCon = Connexion.getCon();
 			PreparedStatement preparedStatement = myCon.prepareStatement(req);
 			preparedStatement.setString(1, email);
@@ -124,7 +124,7 @@ public class UserManagement {
         User user = null;
         try {
         	Connection myCon = Connexion.getCon();
-            PreparedStatement myStmt = myCon.prepareStatement("SELECT * FROM Users WHERE mail = ? and password=?");
+            PreparedStatement myStmt = myCon.prepareStatement("SELECT * FROM user WHERE email = ? and password=?");
             myStmt.setString(1, email);
             myStmt.setString(2, password);
             ResultSet resultat = myStmt.executeQuery();
@@ -133,7 +133,7 @@ public class UserManagement {
                 user = new User(resultat.getInt("id"), resultat.getString("email"), resultat.getString("password"),resultat.getString("role"));
                 return user;
             }
-            return user;
+//            return user;
         } catch (SQLException e) {
         	e.printStackTrace();
             System.out.println("Utilisateur introuvable");

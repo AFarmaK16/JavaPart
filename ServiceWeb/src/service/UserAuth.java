@@ -6,19 +6,19 @@ import metier.User;
 import service.UserManagement;
 @WebService(serviceName = "UserAuthWS")
 public class UserAuth {
-	private UserManagement userManag =null;
+	private UserManagement userManag = new UserManagement();
 	  public User Authentification(@WebParam(name = "email")String email,@WebParam(name = "Password") String password) {
-	        try {
-	            User user = userManag.getUser(email, password);
+	      User user=null;  
+		  try {
+	            user = userManag.getUser(email, password);
 	            if (user.getPassword().equalsIgnoreCase(password)) {
 //	            	if (user.getPassword().equalsIgnoreCase(Crypt.encrypt(password))) {
 	                return user;
 	            }
-	            else
-	                return null;
 	        } catch (Exception e) {
 	            System.out.println(e.getMessage());
-	            return null;
+	            
 	        }
+		  return user;
 	    }
 }

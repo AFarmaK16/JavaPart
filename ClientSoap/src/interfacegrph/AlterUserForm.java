@@ -6,8 +6,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import Validations.EmailValidation;
-import Validations.NumberValidation;
+//import Validations.EmailValidation;
+//import Validations.NumberValidation;
 import dao.UserRepository;
 import exceptions.WebServiceException;
 import service.*;
@@ -35,7 +35,7 @@ public class AlterUserForm {
     JTextField userNField = new JTextField();
     JPasswordField userPwdField = new JPasswordField();
     JPasswordField userPwdConfField = new JPasswordField();
-    String[] fields = {"Admin","Editor"};
+    String[] fields = {"admin","editeur"};
     JComboBox<String> userRoleField = new JComboBox<>(fields);
     User user;
 
@@ -93,7 +93,7 @@ public class AlterUserForm {
                 String userPwd = String.valueOf(userPwdField.getPassword());
                 String userPwdConf = String.valueOf(userPwdConfField.getPassword());
                 if (!userEmail.equals("") && !userRole.equals("") && !userPwd.equals("") && !userPwdConf.equals("")) {
-                    if (EmailValidation.isValid(userEmail)) {
+                    if (userEmail!=null) {
                             if (userPwd.equals(userPwdConf)) {
                                 User user = new User();
                                 Update request = new Update();
@@ -131,10 +131,8 @@ public class AlterUserForm {
         resetBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 userEmailField.setText("");
-                userFnField.setText("");
-                userLnField.setText("");
                 userNField.setText("");
-                // userRoleField.setText("");
+//                 userRoleField.setText("");
                 userPwdField.setText("");
                 userPwdConfField.setText("");
             }

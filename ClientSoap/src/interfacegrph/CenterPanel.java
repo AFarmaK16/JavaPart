@@ -51,8 +51,6 @@ public class CenterPanel extends JPanel {
         this.add(userForm.userPwdLabel);
         this.add(userForm.userPwdConfLabel);
         this.add(userForm.userEmailField);
-        this.add(userForm.userFnField);
-        this.add(userForm.userLnField);
         this.add(userForm.userNField);
         this.add(userForm.userRoleField);
         this.add(userForm.userPwdField);
@@ -73,15 +71,12 @@ public class CenterPanel extends JPanel {
         this.add(userForm.userPwdLabel);
         this.add(userForm.userPwdConfLabel);
         this.add(userForm.userEmailField);
-        this.add(userForm.userFnField);
-        this.add(userForm.userLnField);
         this.add(userForm.userNField);
         this.add(userForm.userRoleField);
         this.add(userForm.userPwdField);
         this.add(userForm.userPwdConfField);
         this.add(userForm.addBtn);
         this.add(userForm.resetBtn);
-        this.add(userForm.blockBtn);
         this.add(userForm.deleteBtn);
         this.add(userForm.messageLabel);
         this.setLayout(null);

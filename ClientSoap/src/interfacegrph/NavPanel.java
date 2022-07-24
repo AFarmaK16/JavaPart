@@ -34,7 +34,7 @@ public class NavPanel extends JPanel{
         this.setLayout(new BorderLayout());
         this.add(logout, BorderLayout.EAST);
         this.add(userInfo,BorderLayout.WEST);
-        this.setBackground(Color.DARK_GRAY);
+        this.setBackground(Color.cyan);
         this.setPreferredSize(new Dimension(100, 50));
     }
 }

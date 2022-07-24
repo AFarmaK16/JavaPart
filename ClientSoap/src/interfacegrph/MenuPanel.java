@@ -12,7 +12,7 @@ public class MenuPanel extends JPanel implements ActionListener {
     
     public MenuPanel(CenterPanel p) {
         this.setPreferredSize(new Dimension(200, 100));
-        this.setBackground(Color.GRAY);
+        this.setBackground(Color.BLUE);
 
         JButton usersList = new JButton("List Users");
         usersList.setForeground(Color.white);

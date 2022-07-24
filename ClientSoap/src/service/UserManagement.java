@@ -39,18 +39,27 @@ public interface UserManagement {
 
     /**
      * 
+     * @param arg3
+     * @param arg2
+     * @param arg1
      * @param arg0
      * @return
-     *     returns service.User
+     *     returns java.lang.String
      */
-    @WebMethod
+    @WebMethod(operationName = "Update")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getUserById", targetNamespace = "http://service/", className = "service.GetUserById")
-    @ResponseWrapper(localName = "getUserByIdResponse", targetNamespace = "http://service/", className = "service.GetUserByIdResponse")
-    @Action(input = "http://service/UserManagement/getUserByIdRequest", output = "http://service/UserManagement/getUserByIdResponse")
-    public User getUserById(
+    @RequestWrapper(localName = "Update", targetNamespace = "http://service/", className = "service.Update")
+    @ResponseWrapper(localName = "UpdateResponse", targetNamespace = "http://service/", className = "service.UpdateResponse")
+    @Action(input = "http://service/UserManagement/UpdateRequest", output = "http://service/UserManagement/UpdateResponse")
+    public String update(
         @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2,
+        @WebParam(name = "arg3", targetNamespace = "")
+        int arg3);
 
     /**
      * 
@@ -93,27 +102,18 @@ public interface UserManagement {
 
     /**
      * 
-     * @param arg3
-     * @param arg2
-     * @param arg1
      * @param arg0
      * @return
-     *     returns java.lang.String
+     *     returns service.User
      */
-    @WebMethod(operationName = "Update")
+    @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Update", targetNamespace = "http://service/", className = "service.Update")
-    @ResponseWrapper(localName = "UpdateResponse", targetNamespace = "http://service/", className = "service.UpdateResponse")
-    @Action(input = "http://service/UserManagement/UpdateRequest", output = "http://service/UserManagement/UpdateResponse")
-    public String update(
+    @RequestWrapper(localName = "getUserById", targetNamespace = "http://service/", className = "service.GetUserById")
+    @ResponseWrapper(localName = "getUserByIdResponse", targetNamespace = "http://service/", className = "service.GetUserByIdResponse")
+    @Action(input = "http://service/UserManagement/getUserByIdRequest", output = "http://service/UserManagement/getUserByIdResponse")
+    public User getUserById(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        String arg2,
-        @WebParam(name = "arg3", targetNamespace = "")
-        int arg3);
+        int arg0);
 
     /**
      * 

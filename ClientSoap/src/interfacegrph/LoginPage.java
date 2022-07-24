@@ -6,7 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import Validations.EmailValidation;
+//import Validations.EmailValidation;
 import dao.UserLogin;
 import dao.UserRepository;
 import exceptions.WebServiceException;
@@ -72,7 +72,7 @@ public class LoginPage implements ActionListener {
         frame.add(loginBtn);
         frame.add(resetBtn);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(420, 420);
+        frame.setSize(500, 500);
         frame.setLayout(null);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
@@ -88,7 +88,7 @@ public class LoginPage implements ActionListener {
         if (e.getSource() == loginBtn) {
             String userEmail = userLoginField.getText();
             String userPassword = String.valueOf(userPwdField.getPassword());
-            if (EmailValidation.isValid(userEmail)) {
+            if (userEmail!=null){
                 Authentification loginRequest = new Authentification();
                 loginRequest.setEmail(userEmail);
                 loginRequest.setPassword(userPassword);
@@ -113,7 +113,10 @@ public class LoginPage implements ActionListener {
                     }
                     else {
                         messageLabel.setForeground(Color.RED);
-                        messageLabel.setText("Email or Password Incorrect !");
+                        //LOG OR PASS INCORRECT
+                        messageLabel.setText("Login ou mot de passe incorrect");
+//                        messageLabel.setText(""+loginRequest);
+                        
                     }
                 } catch (Exception ex) {
                     messageLabel.setForeground(Color.RED);
