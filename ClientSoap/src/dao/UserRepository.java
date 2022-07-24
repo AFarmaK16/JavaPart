@@ -25,7 +25,7 @@ public class UserRepository {
         try {
             stub = stubManager.getMgtStubInstance();          
         } catch (ExceptionInInitializerError e) {
-            System.out.println("User Management Web Service Unavailable ! :" + e.getMessage());
+            System.out.println("WebService de gestion users indisponible !! :" + e.getMessage());
         }
     }
 
@@ -33,7 +33,7 @@ public class UserRepository {
         if (stub != null) {
             return instance;
         } else {    
-            throw new WebServiceException("User Management Web Service Unavailable !");
+            throw new WebServiceException("WebService de gestion users indisponible !");
         }
     }
 

@@ -34,8 +34,6 @@ public class CenterPanel extends JPanel {
         tableContainer.setBounds(50, 130, 900, 600);
         this.setLayout(null);
         this.add(table.title);
-        this.add(table.searchLabel);
-        this.add(table.searchField);
         this.add(tableContainer);
         // this.updateUI();
     }

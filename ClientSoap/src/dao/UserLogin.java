@@ -16,7 +16,7 @@ public class UserLogin {
         try {
             stub = stubManagement.getAuthStubInstance();
         } catch (ExceptionInInitializerError e) {
-            System.out.println("Authentication Web Service Unavailable ! :" + e.getMessage());
+            System.out.println("WebService d'Authentication indisponible ! :" + e.getMessage());
         }
     }
 
@@ -24,14 +24,13 @@ public class UserLogin {
         if (stub != null) {
             return instance;
         } else {
-            throw new WebServiceException("Authentication Web Service Unavailable !");
+            throw new WebServiceException("WebService d'Authentication indisponible !!");
         }
     }
     
     public AuthentificationResponse login(Authentification request) {
     	AuthentificationResponse response = new AuthentificationResponse();
         response.setReturn(stub.authentification(request.getEmail(), request.getPassword()));
-//        response.setReturn(stub.login(request.getEmail(), request.getPassword()));
         return response;
     }
 }

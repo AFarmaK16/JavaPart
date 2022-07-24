@@ -120,7 +120,7 @@ public class LoginPage implements ActionListener {
                     }
                 } catch (Exception ex) {
                     messageLabel.setForeground(Color.RED);
-                    messageLabel.setText("Login Service Unavailable ! Try again Later...");
+                    messageLabel.setText("WebService indisponible veuilleaz reessayer...");
                 }
             } else {
                 messageLabel.setForeground(Color.RED);

@@ -22,30 +22,10 @@ import service.*;
 public class UsersTable {
     private static UserRepository userRepo;
     JLabel title = new JLabel("List Of Users !");
-    JLabel searchLabel = new JLabel("Search :");
-    JTextField searchField = new JTextField();
     public UsersTable(CenterPanel p) {
         title.setBounds(50, 10, 250, 40);
         title.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
-        searchLabel.setBounds(50,60,100,35);
-        searchField.setBounds(100, 60, 600, 35);
-        searchField.getDocument().addDocumentListener(new DocumentListener() {
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                String query = searchField.getText();
-                p.displayUsersTable(query);
-            }
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                String query = searchField.getText();
-                p.displayUsersTable(query);
-            }
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                String query = searchField.getText();
-                p.displayUsersTable(query);
-            }
-        });
+
          try {
             userRepo = UserRepository.getUserRepoInstance();
         } catch (WebServiceException e) {
